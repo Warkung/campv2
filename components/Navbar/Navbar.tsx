@@ -12,9 +12,7 @@ function Navbar() {
         <Search />
         <div className=" flex gap-4">
           <Darkmode />
-          <Button>
-            <ProfileMenu />
-          </Button>
+          <ProfileMenu />
         </div>
       </div>
     </nav>

@@ -6,18 +6,34 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { AlignLeft } from "lucide-react";
+import Link from "next/link";
+import { Button } from "../ui/button";
+import UserIcon from "./UserIcon";
+import links from "@/utils/Links";
+
+
+
 
 function ProfileMenu() {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger>Profile</DropdownMenuTrigger>
+      <DropdownMenuTrigger asChild>
+        <Button variant={"outline"}>
+          <AlignLeft />
+          <UserIcon />
+        </Button>
+      </DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuLabel>My Account</DropdownMenuLabel>
         <DropdownMenuSeparator />
-        <DropdownMenuItem>Profile</DropdownMenuItem>
-        <DropdownMenuItem>Billing</DropdownMenuItem>
-        <DropdownMenuItem>Team</DropdownMenuItem>
-        <DropdownMenuItem>Subscription</DropdownMenuItem>
+        {links.map((link, index) => (
+          <DropdownMenuItem key={index}>
+            <Link href={link.href} className="capitalize">
+              {link.label}
+            </Link>
+          </DropdownMenuItem>
+        ))}
       </DropdownMenuContent>
     </DropdownMenu>
   );
