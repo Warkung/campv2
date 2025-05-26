@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar/Navbar";
 import Provider from "./Provider";
 import { ClerkProvider } from "@clerk/nextjs";
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
