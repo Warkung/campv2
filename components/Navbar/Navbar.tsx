@@ -1,4 +1,7 @@
+import { Button } from "../ui/button";
+import { Darkmode } from "./Darkmode";
 import Logo from "./Logo";
+import ProfileMenu from "./ProfileMenu";
 import Search from "./Search";
 
 function Navbar() {
@@ -7,9 +10,11 @@ function Navbar() {
       <div className="container flex flex-col justify-between py-8 sm:flex-row sm:items-center gap-4  ">
         <Logo />
         <Search />
-        <div className=" flex">
-          <h1>Darkmode</h1>
-          <h1>Profile</h1>
+        <div className=" flex gap-4">
+          <Darkmode />
+          <Button>
+            <ProfileMenu />
+          </Button>
         </div>
       </div>
     </nav>
