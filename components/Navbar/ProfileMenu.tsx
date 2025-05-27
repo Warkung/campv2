@@ -1,3 +1,5 @@
+"use client"
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -26,6 +28,7 @@ function ProfileMenu() {
       <DropdownMenuContent>
         {/* Login Already */}
         <SignedIn>
+
           <DropdownMenuLabel>My Account</DropdownMenuLabel>
           <DropdownMenuSeparator />
 
@@ -38,7 +41,7 @@ function ProfileMenu() {
           ))}
           <DropdownMenuSeparator />
           <SignOutLink />
-        </SignedIn>
+          </SignedIn>
 
         {/* Login Not Already */}
         <SignedOut>

@@ -1,5 +1,5 @@
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
+import SubmitButton from "@/components/form/Buttons";
+import FormInput from "@/components/form/FormInput";
 import { Button } from "@/components/ui/button";
 
 const CreateProfileAction = async (formData: FormData) => {
@@ -11,18 +11,37 @@ const CreateProfileAction = async (formData: FormData) => {
 function CreateProfile() {
   return (
     <section>
-      <h1 className=" capitalize text-2xl my-5 font-bold ">
+      <h1 className=" capitalize text-2xl my-5 font-bold text-center ">
         new user
       </h1>
-      <div className=" border p-8 rounded-lg max-w-md ">
+      <div className=" border p-8 rounded-lg max-w-md mx-auto">
         <form action={CreateProfileAction}>
-          <div className="mb-2 flex flex-col gap-2">
-            <Label htmlFor="firstName" className="text-left font-bold text-lg font-mono">First Name</Label>
-            <Input name="firstName" type="text" className="" />
-          </div>
-          <Button variant={"outline"} type="submit" size={"lg"}>
-            Create Profile
-          </Button>
+          <FormInput
+            name="firstName"
+            label="First Name"
+            type="text"
+            placeholder="First Name"
+          />
+          <FormInput
+            name="lastName"
+            label="Last Name"
+            type="text"
+            placeholder="Last Name"
+          />
+          <FormInput
+            name="userName"
+            label="User Name"
+            type="text"
+            placeholder="User Name"
+          />
+          <FormInput
+            name="password"
+            label="Password"
+            type="password"
+            placeholder="Password"
+          />
+
+          <SubmitButton text="Create Profile" size="lg"  />
         </form>
       </div>
     </section>
